@@ -62,15 +62,26 @@
 
     <h2> 4. What is execution context? </h2>
     <p>
-      <span> Ans.</span> Execution context is used to describe how a code works inside JavaScript. It refers 
-      to the environment that allows JavaScript code to be executed. The execution context determines 
-      which code, section has access to the code's functions, variables and objects. Everything that happens 
-      inside the JavaScript happens in execution context. If write one line of code or 1000 line of code 
-      execution context always is created. Execution context have two parts that is creation phase and 
-      execution phase. In creation phase we have code environment or component and memory component. Inside 
-      creation phase we have memory component and inside execution phase we have code component. So what 
-      happens is whenever a code is running, an execution context is get created. Call stack is also called 
-      control stack and runtime stack
+      <span> Ans.</span> Execution context is used to describe how a code works inside JavaScript.Execution 
+        context refers to the environment that allows JavaScript code to be executed. The execution context 
+        determines which code, section has access to the code's functions, variables and objects.Everything 
+        that happens inside the JavaScript happens in execution context. If write one line of code or 1000 
+        line of code execution context always is created. Execution context have two parts that is creation 
+        phase and execution phase. In creation phase we have code environment or component and memory component
+        Inside creation phase we have memory component and inside execution phase we have code component. 
+        Whenever we run a code a global execution context is being created in the call stack. Call stack 
+        is also called control stack and runtime stack. So in creation phase that is the memory component, 
+        all the variables and functions inside the code are assigned some memory that is undefined.
+        Then inside the execution phase that is the code component if there is any variables defined with 
+        some values will be assigned to the variable and if there is any function call then a new function 
+        execution context is been created inside the global execution context inside the call stack.
+        Whenever a function is called inside the code a new function execution context is been created 
+        all the time and it would be removed on the basis of last in first out. If in the new  function 
+        execution context there is some variable which is not defined then the compiler start searching 
+        it inside the global execution context  or the parent execution context. This way inside call 
+        stack after the global one by one function execution context created  and the code inside it get 
+        executed after that it is it poped out in LIFO basis and finally global execution context also gets 
+        removed at Las and finally we get our output.
     </p>
     <pre>
 
