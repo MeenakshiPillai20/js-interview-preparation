@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Interview Question </title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <div class="container">
+        <h1>Day 3 Interview Questions</h1>
+    <h2> 1. What is the use of setTimeout?</h2>
+    <p> 
+      <span> Ans.</span> The setTimeout() method executes a block of code after specified time. Basically 
+      if we want a output after some specified time we can set the time for that block of code in the 
+      setTimeout function and through this we can get the output with a delay of whatever time set. This 
+      method executes the code only once and 1 second = 1000 millisecond.
+    </p>
+    <pre class="pre">
+
+      setTimeout( ()=>{
+        console.log("Hello world")
+      }, 3000);
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      Hello world 
+     ( after 3 sec it will print )
+    </pre>
+    <h2> 2. What is an event loop and call stack?</h2>
+    <p>
+       <span> Ans.</span> The setTimeout, setInterval, fetch, console these are not inbuild JavaScript 
+       function. These are the part of web API to make JavaScript asynchronous and which are being given 
+       by browser to JavaScript to perform some task. JavaScript does not have anything, it just have a 
+       single thread or you can call it a main thread where it is executing the code all at once even if 
+       it is a million lines of code.
+    </p>
+    <p>Event loop is nothing but a gatekeeper or a method that keeps on monitoring your call stack and call 
+      back queue. If any task is there in call back queue that needs to be executed then  it checks in the 
+      global execution context is there in call stack is empty or not, if empty then it pushes the task that 
+      need to be exactuted into the call stack.</p>
+    <p>Call stack is also called control stack and runtime stack. Everything happens in the JavaScript happens 
+      in the execution context. When we run a specific code it create a global execution context inside 
+      the call stack. In global execution context all the code get executed and if there is any function 
+      call then a new function execution context will get created on call stack and the code inside that 
+      will execute, if there is any other function call then another function execution context would be 
+      created like this it would be going on. After that finally the code would get executed in the function 
+      execution context then it would be poped out one by one on the basis of last in first out. This way all 
+      the execution on call stack would be poped out and after we get the output the global execution context 
+      will also be poped out from the call stack.</p>
+      <pre class="pre">
+
+        var a = 10;
+        function add(x,y){
+            console.log(x+y)
+        }
+        add(2,3)
+        add(4,5)
+  
+        console.log(a)
+      </pre>
+      <p class="output">Output :</p>
+      <pre>
+        5
+        9
+        10
+      </pre>
+    <h2> 3. What are arrow functions? </h2>
+    <p>
+      <span> Ans.</span> Arrow function is the newest feature introduced ES6 version of JS, to write simple 
+      and manageable code that is easy to debug and understand.
+    </p>
+    <pre class="pre">
+
+      let arrow = () => {
+        console.log("This is a Arrow function");
+      }
+      arrow();
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      This is a Arrow function
+    </pre>
+    <h2> 4. What is a Temporal Dead Zone?</h2>
+    <p>
+      <span> Ans.</span> If you are accessing any variable before its declaration and that variable is 
+      defined using let and const keywords then you will be getting a  reference error because the variable 
+      is in temporal dead zone. To avoid Temporal dead zone, try to access a variable after its declaration 
+      and initialisation.
+    </p>
+    <pre class="pre">
+
+      console.log(a);
+      let a = "hello";
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      Error: Cannot access 'a' before initialization at Object.
+    </pre>
+    <h2> 5. What is hoisting?</h2>
+    <p>
+      <span> Ans.</span> Hosting is a behaviour of JavaScript where all the variables are move of the top 
+      of declaration. In other words we can say that we can use the variables and functions in JavaScript 
+      before declaring them. Var keyword only support hoisting let and const keyword doesn't support hoisting.
+    </p>
+    <pre class="pre">
+
+      console.log(a)
+      var a = "hello"
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      undefined
+    </pre>
+    <h2> 6. What is the DOM? </h2>
+    <p>
+      <span> Ans.</span> DOM (Document object model), JavaScript support DOM as a structure of Hierarchy.
+      Document = HTML  -> HEAD  and BODY. Methods to access the DOM elements are by id, by class name, 
+      by tag name and by query selector. In query selector we can use ID, class and tag name.
+    </p>
+    <h2> 7. Difference between undefined vs not defined vs NaN </h2>
+    <p>
+      <span> Ans.</span> These all are the properties of JavaScript. 
+      <p>Undefined is when we try to access a variable which is existing in the memory space but hasn't been 
+        assigned any value till now. Basically if the variable is declared using var keyword, but not given 
+        any value to it and we try to access it before declaring do we will get undefined.</p> 
+      
+      <p>Not defined is when we try to access a variable which is does not exist in memory space basically 
+        if the value is not initialised or declared and we are still trying to access that variable using let 
+        and const then we will get not defined.</p>
+      
+      <p>NAN is a data type when we are trying to access any string and number, to check if it is a string 
+        or a number then it will throw you an NAN error.</p>
+      
+    </p>
+    </div>
+   
+
+  </body>
+</html>
