@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Interview Question </title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <div class="container">
+        <h1>Day 4 Interview Questions</h1>
+    <h2> 1. How many operators do we have in JS?</h2>
+    <p> 
+      <span> Ans.</span> Operator can manipulate a certain value or operand. Operators are basically used to 
+      perform some specific mathematical and logical computation on operands. In another words we can say that 
+      operator operates the operands. There are many operators but few of them are Assignment, Arithmetic, 
+      Logical, Relational, Bitwise, Comparison operator and many more...
+    </p>
+    <pre class="pre">
+
+      let a = 5,b = 5, d = 3;
+      let c = a + b;
+      d += 8
+      console.log('Value of c =>',c)
+      console.log('Value of d =>',d)
+      if (a == b)
+        console.log('Both are equals')
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+        Value of c => 10
+        Value of d => 11
+        Both are equals
+    </pre>
+    <h2> 2. What are pure functions? </h2>
+    <p>
+       <span> Ans.</span> Pure function is a function that always returns the same result if the same 
+       arguments are passed. In another words  it is a function that would give same or consistent output 
+       if same input is being passed. It is nothing but a well defined function.
+    </p>
+    <pre class="pre">
+
+      function add(a,b){
+        console.log(a+b);
+      }
+      add(3,4)
+      add(3,4)
+      add(7,5)
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      7
+      7
+      12
+    </pre>
+    <h2> 3. What is callback hell? </h2>
+    <p>
+      <span> Ans.</span> Call back hell is a nested callback stacked below one another, in other words it 
+      is a function that will execute after execution of its parent function is executed completely. It also 
+      form pyramid like structure that is difficult to understand and debug. We should avoid using callback 
+      hell as much as possible.
+    </p>
+    <pre class="pre">
+
+      function printNum(){
+        setTimeout(() => {
+          console.log('5')
+          setTimeout(() => {
+            console.log('4')
+            setTimeout(() => {
+              console.log('3')
+              setTimeout(() => {
+                console.log('2')
+                setTimeout(() => {
+                  console.log('1')
+                },1000)
+              },2000)
+            },3000)
+          }, 4000)
+        }, 5000);
+      }
+      printNum()
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      5
+      4
+      3
+      2
+      1
+    </pre>
+    <h2> 4. What are promises and why do we need them? </h2>
+    <p>
+      <span> Ans.</span> Promises is like heaven for callbacks. It is introduced in ES6 version to handle 
+      a asynchronous operations in an efficient way. It debug and manage code we need promises. It is 
+      basically used to find out if the asynchronous operation is successfully completed or not. A promise 
+      may have one of the three states that is pending, fulfilled or rejected. Promises allows us to write 
+      cleaner code and allows error to pass down the chain and can be handled in a common place.
+    </p>
+    <pre class="pre">
+
+      var promise = new Promise((resolve, reject) => {
+        if(5 === 5) 
+          resolve();
+        else 
+          reject();
+      });
+         
+      promise.
+          then(function () {
+              console.log('Success,  Both are equals');
+          }).
+          catch(function () {
+              console.log('Some error, both are not equals');
+          });
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      Success,  Both are equals
+    </pre>
+    <h2> 5. What is promise chaining? </h2>
+    <p>
+      <span> Ans.</span> Promise chaining are easy to manage when dealing with multiple asynchronous 
+      operation where callbacks can create callback hell leading to unmageable code. To avoid callback 
+      hell  we can use promise chaining. It is basically when multiple use of .then method are used.
+    </p>
+    <pre class="pre">
+
+      const printNum = (time, value) => {
+        return new Promise ((resolved, rejected) => {
+          setTimeout(() => {
+            console.log(time)
+            resolved();
+          }, time);
+        })
+      }
+      
+      printNum(5000, '5')
+         .then(() => printNum(4000, '4'))
+         .then(() => printNum(3000, '3'))
+         .then(() => printNum(2000, '2'))
+         .then(() => printNum(1000, '1'))
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      5000
+      4000
+      3000
+      2000
+      1000
+    </pre>
+    <h2> 6. Give an example of async/await? </h2>
+    <p>
+      <span> Ans.</span> Async and await are introduced in ES8 version of JavaScript which return a promise. 
+      Await is also a function which waits for a promise.
+    </p>
+    <pre class="pre">
+
+      const printNum = (time, value) => {
+        return new Promise ((resolved, rejected) => {
+          setTimeout(() => {
+            console.log(value)
+            resolved();
+          }, time);
+        })
+      }
+      
+      async function newfunc(){
+        await printNum(5000, '5')
+        await printNum(4000, '4')
+        await printNum(3000, '3')
+        await printNum(2000, '2')
+        await printNum(1000, '1')
+      }
+      newfunc()
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      5
+      4
+      3
+      2
+      1
+    </pre>
+    <h2> 7. What is the purpose of async/await keywords? </h2>
+    <p>
+      <span> Ans.</span> Async and await both are keywords which are basically brothers and sisters or 
+      siblings basically wherever async keyword goes await follows it. To avoid using much promises we 
+      have this best alternative basically to write the code in simplified manner that would make the code 
+      more readable and understandable and to avoid callback hell and promises we use async and await.
+    </p>
+  
+    </div>
+   
+
+  </body>
+</html>
