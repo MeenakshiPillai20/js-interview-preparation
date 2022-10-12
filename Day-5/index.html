@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Interview Question </title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <div class="container">
+        <h1>Day 5 Interview Questions</h1>
+    <h2> 1. What is the for-in loop in JavaScript? Give its syntax?</h2>
+    <p> 
+      <span> Ans.</span> In JavaScript the for-in loop is a basic control statement that allows you to loop 
+      through all the properties of an object. The statements of code found within the loop body will be 
+      executed on once for each property of the object.
+    </p>
+    <p class="output"> Syntax :</p>
+    <pre >
+
+      for (variable in object){
+        //statements
+      }
+    </pre>
+    <pre class="pre">
+
+      const student = {
+        name: 'Monica',
+        class: 7,
+        age: 12
+      }
+      for ( let key in student ) {
+        console.log(key,` => `,student[key]);
+      }
+    </pre>
+    <p class="output">Output :</p>
+      <pre>
+        name  =>  Monica
+        class  =>  7
+        age  =>  12
+      </pre>
+    
+    <h2> 2. Explain Local Scope, Block Scope, Functional Scope and Scope Chain in javascript? </h2>
+    <p>
+       <span> Ans.</span> In global scope variables are declared outside of all functions are known as global 
+        variables and in a global scope. Global variables are accessible anywhere in the program.
+    </p>
+    <p>In functional scope variables that are declared inside a function are called local variables and in a 
+       functional scope. Local variables are accessible anywhere inside the function.</p>
+
+    <p>Local scope it is basically similar to functional scope has local scope is defined inside functional 
+       scope but inside brackets opening and closing { }.</p>
+
+    <p>In block scope variable that are declared inside a specific block and can't be accessed outside of 
+       the block. In order to access the variable of that specific block we need to create object for it.</p>
+
+    <p>JavaScript engine uses scopes to find out the exact location or accessibility of variable that 
+       particular process is known as scope chain.</p>
+
+    <h2> 3. What is difference between null and undefined and where to use what?</h2>
+    <p>
+      <span> Ans.</span> Null and undefined both are keywords used in JavaScript. Null is the intentional 
+      absence of the value. It is one of the primitive values of JavaScript. Undefined means the value does 
+      not exist in the compiler. It is the Global object.
+    </p>
+    <p>We use null when we have to define a variable and we have to make it programmatically empty and 
+      undefined is used when we have to define the variable but don't have any use right now so we just 
+      make that variable using var keyword and we don't not use it currently.</p>
+
+      <pre class="pre">
+
+        let name = null;
+        var temp;
+        if(name == null && temp === undefined)
+          console.log("true");
+        else
+          console.log("false");
+      </pre>
+      <p class="output">Output :</p>
+      <pre>
+        true
+      </pre>
+
+    <h2> 4. what is Symbol? </h2>
+    <p>
+      <span> Ans.</span> Symbols are introduced in ES6 version of JavaScript a new primitive data type of 
+      JavaScript like string,  number, boolean, etc. Basically symbol is a building object whose constructor 
+      returns a symbol also called symbol value that guarantees to be unique and immutable 
+      ( cannot be changed ). You can create symbol by calling the symbol ( )  Global factory function.
+    </p>
+    <pre class="pre">
+
+      let id = Symbol("id");
+      let person = {
+          name: "Jack",
+          [id]: 123 
+      };
+      console.log(person); 
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+       { name: 'Jack', [Symbol(id)]: 123 }
+    </pre>
+    <h2> 5. Write code to explain map and filter in arrays? </h2>
+    <p>
+      <span> Ans.</span> Map method is used for creating a new array from an existing one, applying a function 
+      to each one of the element of the first array. Filter method takes each element in an array and 
+      it applies a conditional statement against it. If the conditional returns true, the elements get pushed 
+      to the output array. If the condition return false, the element does not get pushed to the output array.
+    </p>
+    <pre class="pre">
+
+      let n = [1, 2, 3, 4];
+      let doubled = n.map(item => item * 2);
+      console.log(doubled);
+
+      let num = [1, 2, 3, 4];
+      let evens = num.filter(item => item % 2 === 0);
+      console.log(evens)
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+       [ 2, 4, 6, 8 ]
+       [ 2, 4 ]
+    </pre>
+    <h2> 6. Explain passed by value and passed by reference? </h2>
+    <p>
+      <span> Ans.</span> In Pass by Value, function is called by directly passing the value of the variable 
+      as an argument. Basically the parameter passed as an argument creates its own copy. So any changes made 
+      inside the function is made to the copied value not to the original value. 
+    </p>
+    <p>In Pass by Reference function is called by directly passing the reference or address of the variable 
+      as an argument. Basically parameter passed as an argument does not create its own copy, it refer to 
+      an original value so changes made inside function affect the original value. In JavaScript array and 
+      object follows Pass by Reference property.</p>
+
+    <h2> 7. Please explain Self Invoking Function and its code? </h2>
+    <p>
+      <span> Ans.</span> Self-invoking functions also called self-executing functions these are nameless 
+      anonymous function that is invoked immediately after its definition. These are enclosed inside a set 
+      of parentheses followed by another set of parentheses  ( ), which does the execution.
+    </p>
+  
+    <pre class="pre">
+
+      (function(x){
+        console.log(x);
+      })("Hello, World!");
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      Hello, World!
+    </pre>
+    </div>
+   
+
+  </body>
+</html>
