@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Interview Question </title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <div class="container">
+        <h1>Day 6 and 7 Interview Questions</h1>
+    <h2> 1. Create a button , on click of which new Heading tag h1 should be added with text as "MERN stack" 
+         on the screen above button?</h2>
+
+    <h3> Ans.</h3>
+    <div class="box">
+      <div id="background"></div>
+      <button onclick="addText()" id="btn1">Add Text</button>
+    </div>
+    
+    <h2> 2. Write code to get 1st H1 element from a webpage using DOM?</h2>
+    <h3> Ans.</h3>
+    <div class="box">
+      <div id="text"></div>
+    </div>
+    <h2> 3. Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating 
+         every second?</h2>
+    <h3> Ans.</h3>
+    <div class="box">
+      <div class="timer">
+        <span id="HH"></span>&nbsp; : &nbsp;
+        <span id="MM"></span>&nbsp; : &nbsp;
+        <span id="SS"></span>
+    </div>
+    </div>
+    <h2> 4. Create an HTML page having content as Hello world and a button named Replace Text. When user 
+         will click on this button page content should be changed to "Welcome to Elevation academy"? </h2>
+    <h3> Ans.</h3>
+    <div class="box">
+      <div id="content">Hello World</div>
+      <button onclick="replaceText()" >Replace Text</button>
+    </div>
+    <h2> 5. Create an HTML page having content as Hello world and a button named "Hide Text." When user will 
+         click on this button hide the "Hello World" text </h2>
+    <h3> Ans.</h3>
+    <div class="box">
+      <div id="newContent">Hello World</div>
+      <button onclick="hideText()" >Hide/Show</button>
+    </div>
+
+    <h2> 6. Given an array of 0's and 1's find out number of 0's? </h2>
+    <pre class="pre">
+
+      let arr = [0,1,0,0,1,1,1,0,0,1,0,0]
+      let count=0;
+      for(let i = 0;i < arr.length;i++){
+         if(arr[i] == 0)
+            count++;
+      }
+      console.log(count)
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      7
+    </pre>
+
+    <h2> 7. Given an array find out total no. of odd and even nos.? </h2>
+    <pre class="pre">
+
+      let arr = [2,1,4,5,6,7,3,8,9,3,4,5,6,7,3,4,5,7,8]
+      let sumOdd = 0,sumEven = 0;
+      for(let i = 0;i < arr.length;i++){
+        if(arr[i] % 2 == 0)
+          sumEven+=arr[i];
+        else
+          sumOdd+=arr[i];
+      }
+      console.log("Sum of Odd numbers  => ",sumOdd);
+      console.log("Sum of Even numbers  => ",sumEven);
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+       Sum of Odd numbers  =>  55
+       Sum of Even numbers  =>  42
+    </pre>
+
+    <h2> 8. Given a string find out number of vowels?</h2>
+
+    <pre class="pre">
+
+      let str = "Meenakshi";
+      let count = 0;
+      for(let i = 0;i < str.length;i++){
+         if ( str[i] == 'a' || str[i] == 'A' || 
+              str[i] == 'e' || str[i] == 'E' || 
+              str[i] == 'i' || str[i] == 'I' || 
+              str[i] == 'o' || str[i] == 'O' || 
+              str[i] == 'u' || str[i] == 'U' )
+
+            count++;
+      }
+      console.log(count);
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+       4
+    </pre>
+
+    <h2> 9. Write a code to create two objects with 2 properties each, one will be string and other will 
+            be an array. Create a function to check if all the elements of the arrays in both the objects 
+            are same </h2>
+
+    <pre class="pre">
+
+      var detail1 = {
+        name:"Meenakshi",
+        subjects: ["Maths","English","Hindi","Science"]
+      };
+       
+      var detail2 = {
+        name:"Poornima",
+        subjects: ["Maths","English","Hindi","Science"]
+      };
+       
+      function compare(arr1, arr2) {
+         if(arr1.length == arr2.length){
+             let result = false;
+                for(let i=0; i < arr1.length; i++) {
+                  if(arr1[i] == arr2[i]) 
+                    result = true;
+                  else
+                    return false;
+                }
+                return result;
+          }
+          else
+          return false;       
+      }
+      let res = compare(detail1.subjects, detail2.subjects);
+      if(res) 
+        console.log('The arrays have the same elements.');
+      else 
+        console.log('The arrays have different elements.');
+    </pre>
+    <p class="output">Output :</p>
+    <pre>
+      The arrays have the same elements.
+    </pre>
+  </div>
+   
+  <script src="script.js"></script>
+  </body>
+</html>
