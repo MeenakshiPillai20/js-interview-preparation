@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Interview Question </title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <div class="container">
+        <h1>Interview Questions</h1>
+    <h2> 1. Difference between “ == “ and “ === “ operators? </h2>
+    <p> 
+      <span> Ans.</span> ==  is equality operator and === is the strict equality operator. ==  checks 
+      equality of values of the operands only and === checks equality of values and data types of the operands.
+      Basically == does the type conversion of the operands before comparison where as === compare data 
+      type as well because it doesn't convert the type before comparison.
+    </p>
+    <h2> 2. What is the spread operator? </h2>
+    <p>
+       <span> Ans.</span> Spread operator allows us to copy an existing array or object into another array or object. 
+        It can be mainly used in many cases like when you want to expand, copy, concat with Math object,etc.
+    </p>
+    <h2> 3. What are the differences between var, let and const? </h2>
+    <p>
+      <span> Ans.</span> Var, let and const these are the keywords of JavaScript that we use to declare 
+      variables or to  assign it to a variable. Var was initially used to declare variable when JavaScript 
+      was introduced  and right now in newer versions we have let and const for declaring variables. 
+
+      There are some basic differences
+        
+      The scope of var variable is global scope whereas The scope of let variable is block or local scope.
+      and The scope of constant is also  block or local scope only. Var is global scope because we can access 
+      variables from anywhere but let and const are restricted within the block
+
+      Var variable can be modified, re-intialized re-declared into the scope whereas Let variable can 
+      be modified but cannot be re-intialized, re-declared into the scope whereas Const variable cannot 
+      be modified nor be re-intialized or re-declared into the scope.Const is initialised and declared 
+      on the same time.
+    </p>
+
+    <h2> 4. What is execution context? </h2>
+    <p>
+      <span> Ans.</span> Execution context is used to describe how a code works inside JavaScript.Execution 
+      context refers to the environment that allows JavaScript code to be executed. The execution context 
+      determines which code, section has access to the code's functions, variables and objects.Everything 
+      that happens inside the JavaScript happens in execution context. If write one line of code or 1000 
+      line of code execution context always is created. Execution context have two parts that is creation 
+      phase and execution phase. In creation phase we have code environment or component and memory component
+      Inside creation phase we have memory component and inside execution phase we have code component. 
+      Whenever we run a code a global execution context is being created in the call stack. Call stack 
+      is also called control stack and runtime stack. So in creation phase that is the memory component, 
+      all the variables and functions inside the code are assigned some memory that is undefined.
+      Then inside the execution phase that is the code component if there is any variables defined with 
+      some values will be assigned to the variable and if there is any function call then a new function 
+      execution context is been created inside the global execution context inside the call stack.
+      Whenever a function is called inside the code a new function execution context is been created 
+      all the time and it would be removed on the basis of last in first out. If in the new  function 
+      execution context there is some variable which is not defined then the compiler start searching 
+      it inside the global execution context  or the parent execution context. This way inside call 
+      stack after the global one by one function execution context created  and the code inside it get 
+      executed after that it is it poped out in LIFO basis and finally global execution context also gets 
+      removed at Las and finally we get our output.
+    </p>
+   
+    <h2> 5. What is meant by first class functions? </h2>
+    <p>
+      <span> Ans.</span> First class function is basically if a function in that language is treated like other variables. 
+      So the functions can be assigned to any other variable or passed as an argument or can be returned 
+      by another function. JavaScript treat function as a first-class-citizen. This means that functions 
+      are simply a value and just another type of object.
+    </p>
+   
+    <h2> 6. What are closures? Give an example of closure? </h2>
+    <p>
+      <span> Ans.</span> Closure is a combination of inner function and lexical environment of outer function.In another words 
+      closure gives you access to an outer function's scope from an inner function. In JavaScript closures 
+      are created every time a function is created, at functions creation time.
+    </p>
+   
+    <h2> 7. Explain call( ), apply( ) and, bind( ) methods. Give an example of call( ), apply( ), bind( )? </h2>
+    <p>
+      <span> Ans.</span> Call, apply and bind these are just different way of calling or invoking  a function. When you are 
+      calling a function using any of these then you don't have to define in the function that the first 
+      argument will be an object.
+
+      Call invokes the function and allows you to pass in arguments one by one. Apply invokes the function 
+      and allows you to pass in arguments as an array. Bind returns a new function, allows you to pass 
+      in a array and any number of arguments.
+    </p>
+   
+   
+    <h2> 1. What is creation phase and execution phase? </h2>
+    <p> 
+      <span> Ans.</span> Everything that happens inside the JavaScript happens in execution context. Execution 
+      context have two parts that is creation phase and execution phase. In creation phase we have code 
+      environment or component and memory component. Inside creation phase we have memory component and 
+      inside execution phase we have code component. Whenever we run a code a global execution context is 
+      being created in the call stack. So in creation phase that is the memory component, all the variables 
+      and functions inside the code are assigned some memory that is undefined. Then inside the execution 
+      phase that is the code component if there is any variables defined with some values will be assigned 
+      to the variable and if there is any function call then a new function execution context is been created 
+      inside the global execution context inside the call stack. If in the new  function execution context 
+      there is some variable which is not defined then the compiler start searching it inside the global 
+      execution context  or the parent execution context. This way inside call stack after the global 
+      execution stack by one function execution context created  and the code inside it get executed 
+      after that it is poped out in LIFO basis and finally global execution context also gets removed 
+      at last  and finally we get our output.
+    </p>
+    <h2> 2. What are objects in javascript? </h2>
+    <p>
+       <span> Ans.</span> In javascript,  Object is a non primitive data type that allows you to store 
+       multiple collection of data in the form of key value pairs. Objects have many methods inside it 
+       we can use in program to simplify our code. For-of loop does not work for object it will throw 
+       and error if used. There are three different ways of creating objects:-    
+       1.   By object literal 
+       2.   By creating instance of object that is using new keyword 
+       3.   By object constructor
+    </p>
+    <h2> 3. What are function constructors? </h2>
+    <p>
+      <span> Ans.</span>Function is said to be a constructor when it is used to initialise and create 
+      a instance of class that is also called as object. It is a good practice to follow to keep the 
+      first letter of function name capital. It is compulsory to use this and new keyword.
+    </p>
+    <h2> 4. Explain prototypes? </h2>
+    <p>
+      <span> Ans.</span> Prototype is a special type of object to which we can add additional properties 
+      that can be accessed across the all the instances. Prototype is nothing but an object only. Prototype 
+      also contains the object prototype inside it. Prototype is itself an object that have prototype object 
+      present inside it.
+    </p>
+    <h2> 5. What is prototype chain </h2>
+    <p>
+      <span> Ans.</span> So when we create an object and print the object  on console then an object is 
+      printed in the screen and inside this object there is a prototype automatically created will be shown  
+      when we click there there a constructor  and a inner  prototype created automatically which we do not 
+      create but it is there. So starting from the object going to the prototype object and after that 
+      going to the inner prototype object  and after that going to  prototype null this chain is called 
+      prototype chaining. So the  chain which is formed here that is from 
+      Student object   ---->   Prototype object   ---->   Inner prototype object---->  prototype null.
+    </p>
+   
+    <h2> 6. Give an example of inheritance using function constructor? </h2>
+    <p>
+      <span> Ans.</span> Inheritance is something when child is inheriting the properties of parents.
+    </p>
+    
+    <h2> 7. What are callbacks? </h2>
+    <p>
+      <span> Ans.</span> Function that is passed as an argument to another function is called as call back. 
+      As JavaScript is an event driven language, which means they do not stop the program from running until 
+      they are completed. So to stop the code to certain time limit and after that running that line of 
+      code we can do using call backs. Some examples of callbacks are setTimeout,  setInterval and eventListener.
+      Higher order function is the function which is accepting an another function has an argument
+    </p>
+    <h2> 1. What is the use of setTimeout?</h2>
+    <p> 
+      <span> Ans.</span> The setTimeout() method executes a block of code after specified time. Basically 
+      if we want a output after some specified time we can set the time for that block of code in the 
+      setTimeout function and through this we can get the output with a delay of whatever time set. This 
+      method executes the code only once and 1 second = 1000 millisecond.
+    </p>
+    <h2> 2. What is an event loop and call stack?</h2>
+    <p>
+       <span> Ans.</span> The setTimeout, setInterval, fetch, console these are not inbuild JavaScript 
+       function. These are the part of web API to make JavaScript asynchronous and which are being given 
+       by browser to JavaScript to perform some task. JavaScript does not have anything, it just have a 
+       single thread or you can call it a main thread where it is executing the code all at once even if 
+       it is a million lines of code.
+    </p>
+    <p>Event loop is nothing but a gatekeeper or a method that keeps on monitoring your call stack and call 
+      back queue. If any task is there in call back queue that needs to be executed then  it checks in the 
+      global execution context is there in call stack is empty or not, if empty then it pushes the task that 
+      need to be exactuted into the call stack.</p>
+    <p>Call stack is also called control stack and runtime stack. Everything happens in the JavaScript happens 
+      in the execution context. When we run a specific code it create a global execution context inside 
+      the call stack. In global execution context all the code get executed and if there is any function 
+      call then a new function execution context will get created on call stack and the code inside that 
+      will execute, if there is any other function call then another function execution context would be 
+      created like this it would be going on. After that finally the code would get executed in the function 
+      execution context then it would be poped out one by one on the basis of last in first out. This way all 
+      the execution on call stack would be poped out and after we get the output the global execution context 
+      will also be poped out from the call stack.</p>
+    <h2> 3. What are arrow functions? </h2>
+    <p>
+      <span> Ans.</span> Arrow function is the newest feature introduced ES6 version of JS, to write simple 
+      and manageable code that is easy to debug and understand.
+    </p>
+    <h2> 4. What is a Temporal Dead Zone?</h2>
+    <p>
+      <span> Ans.</span> If you are accessing any variable before its declaration and that variable is 
+      defined using let and const keywords then you will be getting a  reference error because the variable 
+      is in temporal dead zone. To avoid Temporal dead zone, try to access a variable after its declaration 
+      and initialisation.
+    </p>
+    <h2> 5. What is hoisting?</h2>
+    <p>
+      <span> Ans.</span> Hosting is a behaviour of JavaScript where all the variables are move of the top 
+      of declaration. In other words we can say that we can use the variables and functions in JavaScript 
+      before declaring them. Var keyword only support hoisting let and const keyword doesn't support hoisting.
+    </p>
+  
+    <h2> 6. What is the DOM? </h2>
+    <p>
+      <span> Ans.</span> DOM (Document object model), JavaScript support DOM as a structure of Hierarchy.
+      Document = HTML  -> HEAD  and BODY. Methods to access the DOM elements are by id, by class name, 
+      by tag name and by query selector. In query selector we can use ID, class and tag name.
+    </p>
+    <h2> 7. Difference between undefined vs not defined vs NaN </h2>
+    <p>
+      <span> Ans.</span> These all are the properties of JavaScript. 
+      <p>Undefined is when we try to access a variable which is existing in the memory space but hasn't been 
+        assigned any value till now. Basically if the variable is declared using var keyword, but not given 
+        any value to it and we try to access it before declaring do we will get undefined.</p> 
+      
+      <p>Not defined is when we try to access a variable which is does not exist in memory space basically 
+        if the value is not initialised or declared and we are still trying to access that variable using let 
+        and const then we will get not defined.</p>
+      
+      <p>NAN is a data type when we are trying to access any string and number, to check if it is a string 
+        or a number then it will throw you an NAN error.</p>
+      
+    </p>
+
+    <h2> 1. How many operators do we have in JS?</h2>
+    <p> 
+      <span> Ans.</span> Operator can manipulate a certain value or operand. Operators are basically used to 
+      perform some specific mathematical and logical computation on operands. In another words we can say that 
+      operator operates the operands. There are many operators but few of them are Assignment, Arithmetic, 
+      Logical, Relational, Bitwise, Comparison operator and many more...
+    </p>
+    <h2> 2. What are pure functions? </h2>
+    <p>
+       <span> Ans.</span> Pure function is a function that always returns the same result if the same 
+       arguments are passed. In another words  it is a function that would give same or consistent output 
+       if same input is being passed. It is nothing but a well defined function.
+    </p>
+    <h2> 3. What is callback hell? </h2>
+    <p>
+      <span> Ans.</span> Call back hell is a nested callback stacked below one another, in other words it 
+      is a function that will execute after execution of its parent function is executed completely. It also 
+      form pyramid like structure that is difficult to understand and debug. We should avoid using callback 
+      hell as much as possible.
+    </p>
+    <h2> 4. What are promises and why do we need them? </h2>
+    <p>
+      <span> Ans.</span> Promises is like heaven for callbacks. It is introduced in ES6 version to handle 
+      a asynchronous operations in an efficient way. It debug and manage code we need promises. It is 
+      basically used to find out if the asynchronous operation is successfully completed or not. A promise 
+      may have one of the three states that is pending, fulfilled or rejected. Promises allows us to write 
+      cleaner code and allows error to pass down the chain and can be handled in a common place.
+    </p>
+    <h2> 5. What is promise chaining? </h2>
+    <p>
+      <span> Ans.</span> Promise chaining are easy to manage when dealing with multiple asynchronous 
+      operation where callbacks can create callback hell leading to unmageable code. To avoid callback 
+      hell  we can use promise chaining. It is basically when multiple use of .then method are used.
+    </p>
+        <h2> 6. Give an example of async/await? </h2>
+    <p>
+      <span> Ans.</span> Async and await are introduced in ES8 version of JavaScript which return a promise. 
+      Await is also a function which waits for a promise.
+    </p>
+ 
+    <h2> 7. What is the purpose of async/await keywords? </h2>
+    <p>
+      <span> Ans.</span> Async and await both are keywords which are basically brothers and sisters or 
+      siblings basically wherever async keyword goes await follows it. To avoid using much promises we 
+      have this best alternative basically to write the code in simplified manner that would make the code 
+      more readable and understandable and to avoid callback hell and promises we use async and await.
+    </p>
+
+    <h2> 1. What is the for-in loop in JavaScript? Give its syntax?</h2>
+    <p> 
+      <span> Ans.</span> In JavaScript the for-in loop is a basic control statement that allows you to loop 
+      through all the properties of an object. The statements of code found within the loop body will be 
+      executed on once for each property of the object.
+    </p>
+    <p class="output"> Syntax :</p>
+    <pre >
+
+      for (variable in object){
+        //statements
+      }
+    </pre>
+    <h2> 2. Explain Local Scope, Block Scope, Functional Scope and Scope Chain in javascript? </h2>
+    <p>
+       <span> Ans.</span> In global scope variables are declared outside of all functions are known as global 
+        variables and in a global scope. Global variables are accessible anywhere in the program.
+    </p>
+    <p>In functional scope variables that are declared inside a function are called local variables and in a 
+       functional scope. Local variables are accessible anywhere inside the function.</p>
+
+    <p>Local scope it is basically similar to functional scope has local scope is defined inside functional 
+       scope but inside brackets opening and closing { }.</p>
+
+    <p>In block scope variable that are declared inside a specific block and can't be accessed outside of 
+       the block. In order to access the variable of that specific block we need to create object for it.</p>
+
+    <p>JavaScript engine uses scopes to find out the exact location or accessibility of variable that 
+       particular process is known as scope chain.</p>
+
+    <h2> 3. What is difference between null and undefined and where to use what?</h2>
+    <p>
+      <span> Ans.</span> Null and undefined both are keywords used in JavaScript. Null is the intentional 
+      absence of the value. It is one of the primitive values of JavaScript. Undefined means the value does 
+      not exist in the compiler. It is the Global object.
+    </p>
+    <p>We use null when we have to define a variable and we have to make it programmatically empty and 
+      undefined is used when we have to define the variable but don't have any use right now so we just 
+      make that variable using var keyword and we don't not use it currently.</p>
+
+    <h2> 4. what is Symbol? </h2>
+    <p>
+      <span> Ans.</span> Symbols are introduced in ES6 version of JavaScript a new primitive data type of 
+      JavaScript like string,  number, boolean, etc. Basically symbol is a building object whose constructor 
+      returns a symbol also called symbol value that guarantees to be unique and immutable 
+      ( cannot be changed ). You can create symbol by calling the symbol ( )  Global factory function.
+    </p>
+    <h2> 5. Write code to explain map and filter in arrays? </h2>
+    <p>
+      <span> Ans.</span> Map method is used for creating a new array from an existing one, applying a function 
+      to each one of the element of the first array. Filter method takes each element in an array and 
+      it applies a conditional statement against it. If the conditional returns true, the elements get pushed 
+      to the output array. If the condition return false, the element does not get pushed to the output array.
+    </p>
+    <h2> 6. Explain passed by value and passed by reference? </h2>
+    <p>
+      <span> Ans.</span> In Pass by Value, function is called by directly passing the value of the variable 
+      as an argument. Basically the parameter passed as an argument creates its own copy. So any changes made 
+      inside the function is made to the copied value not to the original value. 
+    </p>
+    <p>In Pass by Reference function is called by directly passing the reference or address of the variable 
+      as an argument. Basically parameter passed as an argument does not create its own copy, it refer to 
+      an original value so changes made inside function affect the original value. In JavaScript array and 
+      object follows Pass by Reference property.</p>
+
+    <h2> 7. Please explain Self Invoking Function and its code? </h2>
+    <p>
+      <span> Ans.</span> Self-invoking functions also called self-executing functions these are nameless 
+      anonymous function that is invoked immediately after its definition. These are enclosed inside a set 
+      of parentheses followed by another set of parentheses  ( ), which does the execution.
+    </p>
+</div>
+  </body>
+</html>
